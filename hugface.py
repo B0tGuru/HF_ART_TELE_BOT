@@ -16,7 +16,7 @@ def query(payload):
 
 def genArt(prompt_txt):
 	auto_prompt = f"3d realistic, {prompt_txt}"
-	print(f"using promt: {auto_prompt}")
+	print(f"using prompt: {auto_prompt}")
 	#image_bytes = query({
 	#"inputs": "realistic CGI, giant asteroid colliding in prehistoric african forest, dinasaurs running from asteroid ",})
 	ximage_bytes = query({
@@ -28,6 +28,16 @@ def genArt(prompt_txt):
 	return image_bytes
 	#return io.BytesIO(image_bytes)
 
+def genArt_noWM(prompt_txt):
+	auto_prompt = f"3d realistic, {prompt_txt}"
+	print(f"using prompt: {auto_prompt}")
+	#image_bytes = query({
+	#"inputs": "realistic CGI, giant asteroid colliding in prehistoric african forest, dinasaurs running from asteroid ",})
+	ximage_bytes = query({
+	"inputs": auto_prompt,})
+	#print(ximage_bytes)
+	print("image complete")
+	return ximage_bytes
 #print("image_bytes")
 # You can access the image with PIL.Image for example
 
